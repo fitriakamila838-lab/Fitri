@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabel LAN Crossover</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f2f6fc;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0066cc, #003d80);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #002b5c;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #66ccff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            margin: 15px 0 10px;
+            color: #003d80;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+        }
+
+        .cable-box {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .pinout {
+            flex: 1;
+            min-width: 280px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .pinout h3 {
+            background: #0066cc;
+            color: white;
+            padding: 12px;
+            margin: 0;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #eaf3ff;
+        }
+
+        .orange { background: #ff9d45; }
+        .white-orange { background: #fff0df; }
+        .green { background: #4caf50; color: white; }
+        .white-green { background: #e8f7e8; }
+        .blue { background: #2196f3; color: white; }
+        .white-blue { background: #e8f3ff; }
+        .brown { background: #795548; color: white; }
+        .white-brown { background: #f2e9e5; }
+
+        .upload-area {
+            border: 2px dashed #0066cc;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 15px;
+            background: #f8fbff;
+        }
+
+        input[type="file"] {
+            margin: 15px 0;
+            padding: 10px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 15px;
+            border-radius: 10px;
+            background: #000;
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .ppt-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eef7ff;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #004c99;
+        }
+
+        footer {
+            background: #002b5c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔌 Kabel LAN Crossover</h1>
+    <p>Materi Jaringan Komputer</p>
+</header>
+
+<nav>
+    <a href="#pengertian">Pengertian</a>
+    <a href="#susunan">Susunan Kabel</a>
+    <a href="#pembuatan">Cara Membuat</a>
+    <a href="#video">Video</a>
+    <a href="#ppt">PPT</a>
+</nav>
+
+<div class="container">
+
+    <!-- PENGERTIAN -->
+    <section id="pengertian">
+        <h2>1. Pengertian Kabel LAN Crossover</h2>
+
+        <p>
+            Kabel LAN crossover adalah jenis kabel jaringan Ethernet
+            yang susunan kabel pada konektor RJ45 di kedua ujungnya
+            menggunakan standar yang berbeda.
+        </p>
+
+        <p style="margin-top:10px;">
+            Kabel ini secara tradisional digunakan untuk menghubungkan
+            perangkat sejenis secara langsung, misalnya komputer ke
+            komputer atau switch ke switch.
+        </p>
+
+        <h3>Fungsi Kabel Crossover</h3>
+
+        <ul>
+            <li>Menghubungkan komputer dengan komputer.</li>
+            <li>Menghubungkan switch dengan switch.</li>
+            <li>Menghubungkan perangkat jaringan tertentu secara langsung.</li>
+            <li>Membuat koneksi jaringan tanpa perangkat perantara tertentu.</li>
+        </ul>
+    </section>
+
+
+    <!-- SUSUNAN -->
+    <section id="susunan">
+        <h2>2. Susunan Warna Kabel</h2>
+
+        <p>
+            Kabel crossover menggunakan kombinasi standar
+            <b>T568A</b> pada salah satu ujung dan <b>T568B</b>
+            pada ujung lainnya.
+        </p>
+
+        <div class="cable-box">
+
+            <!-- T568A -->
+            <div class="pinout">
+                <h3>T568A</h3>
+
+                <table>
+                    <tr>
+                        <th>Pin</th>
+                        <th>Warna</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td class="white-green">Putih-Hijau</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td class="green">Hijau</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td class="white-orange">Putih-Oranye</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td class="blue">Biru</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td class="white-blue">Putih-Biru</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td class="orange">Oranye</td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td class="white-brown">Putih-Cokelat</td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td class="brown">Cokelat</td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- T568B -->
+            <div class="pinout">
+                <h3>T568B</h3>
+
+                <table>
+                    <tr>
+                        <th>Pin</th>
+                        <th>Warna</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td class="white-orange">Putih-Oranye</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td class="orange">Oranye</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td class="white-green">Putih-Hijau</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td class="blue">Biru</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td class="white-blue">Putih-Biru</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td class="green">Hijau</td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td class="white-brown">Putih-Cokelat</td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td class="brown">Cokelat</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CARA MEMBUAT -->
+    <section id="pembuatan">
+        <h2>3. Cara Membuat Kabel LAN Crossover</h2>
+
+        <ol>
+            <li>Siapkan kabel UTP.</li>
+            <li>Siapkan konektor RJ45.</li>
+            <li>Siapkan tang crimping.</li>
+            <li>Kupas bagian luar kabel UTP.</li>
+            <li>Urutkan kabel pertama menggunakan standar T568A.</li>
+            <li>Urutkan kabel kedua menggunakan standar T568B.</li>
+            <li>Masukkan kabel ke konektor RJ45.</li>
+            <li>Lakukan crimping menggunakan tang crimping.</li>
+            <li>Periksa susunan kabel menggunakan LAN tester.</li>
+        </ol>
+
+        <h3>Peralatan yang Dibutuhkan</h3>
+
+        <ul>
+            <li>Kabel UTP</li>
+            <li>2 buah konektor RJ45</li>
+            <li>Tang crimping</li>
+            <li>LAN tester</li>
+            <li>Gunting atau pemotong kabel</li>
+        </ul>
+    </section>
+
+
+    <!-- VIDEO -->
+    <section id="video">
+        <h2>4. Upload 2 Video Praktik</h2>
+
+        <div class="video-container">
+
+            <div class="video-card">
+                <h3>Video 1</h3>
+
+                <input
+                    type="file"
+                    id="video1"
+                    accept="video/*"
+                    onchange="loadVideo(this, 'preview1')"
+                >
+
+                <video id="preview1" controls style="display:none;"></video>
+            </div>
+
+
+            <div class="video-card">
+                <h3>Video 2</h3>
+
+                <input
+                    type="file"
+                    id="video2"
+                    accept="video/*"
+                    onchange="loadVideo(this, 'preview2')"
+                >
+
+                <video id="preview2" controls style="display:none;"></video>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PPT -->
+    <section id="ppt">
+        <h2>5. Upload File PPT</h2>
+
+        <div class="upload-area">
+
+            <h3>📊 Upload Presentasi</h3>
+
+            <p>
+                Pilih file PowerPoint dengan format
+                <b>.ppt</b> atau <b>.pptx</b>.
+            </p>
+
+            <input
+                type="file"
+                id="pptFile"
+                accept=".ppt,.pptx"
+                onchange="loadPPT(this)"
+            >
+
+            <div id="pptInfo" class="ppt-info">
+                <p id="pptName"></p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- KESIMPULAN -->
+    <section>
+        <h2>6. Kesimpulan</h2>
+
+        <p>
+            Kabel LAN crossover merupakan kabel Ethernet yang memiliki
+            susunan berbeda pada kedua ujung konektornya, yaitu T568A
+            dan T568B. Kabel ini dapat digunakan untuk koneksi langsung
+            antar perangkat jaringan tertentu.
+        </p>
+
+        <p style="margin-top:10px;">
+            Dalam pembuatan kabel crossover, ketelitian dalam menyusun
+            warna kabel sangat penting agar kabel dapat bekerja dengan
+            baik.
+        </p>
+    </section>
+
+</div>
+
+
+<footer>
+    <p>© 2026 Materi Kabel LAN Crossover</p>
+</footer>
+
+
+<script>
+
+    // Menampilkan video yang dipilih
+    function loadVideo(input, previewId) {
+
+        const video = document.getElementById(previewId);
+
+        if (input.files && input.files[0]) {
+
+            const file = input.files[0];
+
+            const videoURL = URL.createObjectURL(file);
+
+            video.src = videoURL;
+            video.style.display = "block";
+        }
+    }
+
+
+    // Menampilkan informasi file PPT
+    function loadPPT(input) {
+
+        const info = document.getElementById("pptInfo");
+        const name = document.getElementById("pptName");
+
+        if (input.files && input.files[0]) {
+
+            const file = input.files[0];
+
+            name.innerHTML =
+                "📁 File PPT yang dipilih: <b>" +
+                file.name +
+                "</b><br>" +
+                "Ukuran: " +
+                (file.size / 1024 / 1024).toFixed(2) +
+                " MB";
+
+            info.style.display = "block";
+        }
+    }
+
+</script>
+
+</body>
+</html>
